@@ -1,0 +1,401 @@
+{
+  "manifestVersion": 1,
+  "project": "Ottoman: A Legacy Through Generations",
+  "coordinateSpace": "pixels at native texture resolution; generated canvases are runtime Phaser textures",
+  "licensePolicy": "Original project artwork generated in src/art; no third-party game sprites or external image sources.",
+  "assets": [
+    {
+      "id": "terrain.grass",
+      "path": "src/art/TerrainArt.ts",
+      "runtimeKey": "tile_grass_{0..15}",
+      "category": "terrain_tile",
+      "dimensions": [
+        128,
+        64
+      ],
+      "frameCount": 16,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Seamless isometric grass ground; baked into terrain chunks",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "terrain.dirt",
+      "path": "src/art/TerrainArt.ts",
+      "runtimeKey": "tile_dirt_{0..2}",
+      "category": "terrain_tile",
+      "dimensions": [
+        128,
+        64
+      ],
+      "frameCount": 3,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Dirt ground and cultivated field underlay",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "terrain.road",
+      "path": "src/art/TerrainArt.ts",
+      "runtimeKey": "tile_road_{0..2}",
+      "category": "road",
+      "dimensions": [
+        128,
+        64
+      ],
+      "frameCount": 3,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Packed-earth cart and foot paths",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "terrain.water",
+      "path": "src/art/TerrainArt.ts",
+      "runtimeKey": "tile_water_{0..2}",
+      "category": "river",
+      "dimensions": [
+        128,
+        64
+      ],
+      "frameCount": 3,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Shallow water; individual glint sprites animate highlights",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "terrain.scatter",
+      "path": "src/art/TerrainArt.ts",
+      "runtimeKey": "decor_tuft_{0..2}, decor_flower_{0..1}, decor_pebble_{0..1}, decor_reeds",
+      "category": "environment_detail",
+      "dimensions": "tuft 46x32; flower 20x22; pebble 24x16; reeds 64x86",
+      "frameCount": 8,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Sparse grass, seed heads, stones and shore reeds",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "prop.houses",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_house_{0..1}",
+      "category": "house",
+      "dimensions": [
+        240,
+        260
+      ],
+      "frameCount": 2,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Timber, stone, plaster and tiled-roof rural dwellings",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "prop.workshop",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_workshop",
+      "category": "workshop",
+      "dimensions": [
+        220,
+        250
+      ],
+      "frameCount": 1,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Rural smith's workshop with forge glow, vent, anvil and smoke",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "prop.granary",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_granary",
+      "category": "storage_building",
+      "dimensions": [
+        220,
+        260
+      ],
+      "frameCount": 1,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Raised timber grain store with ventilation slits and sheaves",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "prop.zaviye",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_zaviye",
+      "category": "community_building",
+      "dimensions": [
+        220,
+        250
+      ],
+      "frameCount": 1,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Small rural lodge with covered porch and shared guest space; no monumental minaret or dome",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "prop.market",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_market_{0..1}",
+      "category": "workshop_market",
+      "dimensions": [
+        220,
+        190
+      ],
+      "frameCount": 2,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Open-air produce and household-goods stalls arranged as a small village market square",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "prop.trees",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_tree_{0..2}",
+      "category": "tree",
+      "dimensions": [
+        260,
+        300
+      ],
+      "frameCount": 3,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Deciduous and orchard trees",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "prop.rocks",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_rock_{0..1}",
+      "category": "rock",
+      "dimensions": [
+        130,
+        110
+      ],
+      "frameCount": 2,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Field stones and rocky ground props",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "prop.village",
+      "path": "src/art/PropArt.ts",
+      "runtimeKey": "prop_well, prop_hay, prop_sack, prop_sign, prop_pot, prop_fence, prop_barrel, prop_crate",
+      "category": "settlement_detail",
+      "dimensions": "140x180; 100x70; 48x60; 70x96; 40x44; 110x78; 40x48; 46x40",
+      "frameCount": 8,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Well, harvest, household storage, fencing and stalls",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "farm.plots",
+      "path": "src/art/FarmArt.ts",
+      "runtimeKey": "farm_{locked|untouched|prepared|seeded|harvested|wheat_*|barley_*}",
+      "category": "farm_crop",
+      "dimensions": [
+        128,
+        128
+      ],
+      "frameCount": 15,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Farm tile with 64px diamond and crop growth stages",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "character.player",
+      "path": "src/art/CharacterArt.ts",
+      "runtimeKey": "player_{direction}_{idle|walk_N}; player_{female_}{role?}_{direction}_{idle|walk_N}",
+      "category": "player_npc",
+      "dimensions": [
+        128,
+        176
+      ],
+      "frameCount": 168,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Male and female faces and distinct silhouettes; women have a wrapped head covering and longer layered garment with woven panel and hem seams, while men have a shorter tunic silhouette. Three facings, one idle and six walk poses per facing; role variants for farmer, frontier guard and caravaner. Occupation palette is independent of gender; clothing recoloring is masked away from face pixels.",
+      "periods": [
+        "early_frontier",
+        "beylik"
+      ]
+    },
+    {
+      "id": "character.selection",
+      "path": "src/art/CharacterArt.ts",
+      "runtimeKey": "player_ring",
+      "category": "selection",
+      "dimensions": [
+        112,
+        56
+      ],
+      "frameCount": 1,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Grounded player selection ring",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "ui.icons",
+      "path": "src/art/UiArt.ts",
+      "runtimeKey": "icon_coin, icon_wheat, icon_barley",
+      "category": "ui_icon",
+      "dimensions": [
+        28,
+        28
+      ],
+      "frameCount": 3,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Akçe, wheat and barley inventory/economy glyphs",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "ui.panels",
+      "path": "src/art/UiArt.ts",
+      "runtimeKey": "ui_button, ui_panel, ui_ribbon, menu_background",
+      "category": "ui",
+      "dimensions": "360x68; 512x256; 420x54; 1024x768",
+      "frameCount": 4,
+      "license": "Original procedural artwork; project-owned",
+      "use": "Wood, brass and parchment interface surfaces",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "effects.ambient",
+      "path": "src/art/PropArt.ts; src/art/UiArt.ts",
+      "runtimeKey": "prop_smoke, fx_vignette, fx_sunbeam, water_glint_{0..1}",
+      "category": "weather_combat_effect",
+      "dimensions": "64x64; 512x512; 512x512; 46x12",
+      "frameCount": 4,
+      "license": "Original procedural artwork; project-owned",
+      "use": "House smoke, lighting overlays and water glints; no dedicated weather or combat effect frames yet",
+      "periods": [
+        "all"
+      ]
+    },
+    {
+      "id": "character.animals",
+      "path": null,
+      "runtimeKey": "npc_{species}_{direction}_{state}",
+      "category": "npc_animal",
+      "dimensions": null,
+      "frameCount": 0,
+      "license": "No art produced; source and license review required before use",
+      "use": "Reserved pipeline category for period-appropriate livestock and wildlife",
+      "periods": [
+        "all"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "equipment.weapons",
+      "path": null,
+      "runtimeKey": "equipment_{item}_{direction}_{state}",
+      "category": "weapon_equipment",
+      "dimensions": null,
+      "frameCount": 0,
+      "license": "No standalone equipment art produced; original source required",
+      "use": "Reserved category; current character poses do not yet attach inventory visuals",
+      "periods": [
+        "period-tagged"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "effects.combat_weather",
+      "path": null,
+      "runtimeKey": "fx_{kind}_{variant}_{frame}",
+      "category": "combat_weather_effect",
+      "dimensions": null,
+      "frameCount": 0,
+      "license": "No dedicated combat or weather art produced",
+      "use": "Reserved pipeline category; gameplay remains functional without visual effect frames",
+      "periods": [
+        "all"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "character.portraits",
+      "path": null,
+      "runtimeKey": "portrait_{role}_{variant}",
+      "category": "portrait",
+      "dimensions": null,
+      "frameCount": 0,
+      "license": "No portrait art produced; original project source required",
+      "use": "Reserved category for family and dialogue portraits",
+      "periods": [
+        "period-tagged"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "prop.period_building_variants",
+      "path": null,
+      "runtimeKey": "prop_building_{craft}_{period}_{variant}",
+      "category": "building_variant",
+      "dimensions": null,
+      "frameCount": 0,
+      "license": "Not produced",
+      "use": "Future researched regional and period-specific architectural variants",
+      "periods": [
+        "period-tagged"
+      ],
+      "status": "planned"
+    }
+  ],
+  "animationContract": {
+    "frameOrigin": "top-left; transparent padding; consistent 128x176 character cell",
+    "feetAnchor": "x=0.5, y=158/176",
+    "directions": [
+      "front",
+      "back",
+      "side"
+    ],
+    "walkPlayback": "6 frames, 110ms per frame, loop; side view mirrors horizontally",
+    "idlePlayback": "single stable frame",
+    "unavailableStateFallback": "Use the matching direction's idle frame; if absent use player_front_idle; if that is absent retain the last valid texture.",
+    "notYetProduced": [
+      "farming",
+      "harvesting",
+      "interacting",
+      "attacking",
+      "taking_damage",
+      "defeated",
+      "carrying"
+    ]
+  }
+}

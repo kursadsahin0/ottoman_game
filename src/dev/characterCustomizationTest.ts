@@ -1,0 +1,24 @@
+import { CHARACTER_PRESETS, DEFAULT_CHARACTER_VISUALS, inheritCharacterVisuals, normalizeCharacterVisuals, resolveEquipmentAppearance, visualsForAge } from '@data/CharacterCustomization';
+import { FamilySystem } from '@systems/FamilySystem';
+import { seasonForMonth } from '@data/FamilyData';
+
+let failed=0;
+const check=(name:string,ok:boolean)=>{if(!ok){failed++;console.error(`FAIL ${name}`);}else console.log(` ok  ${name}`);};
+const female=normalizeCharacterVisuals({...DEFAULT_CHARACTER_VISUALS,facialHair:'full'},'female');
+check('women cannot load facial hair options',female.facialHair==='none');
+check('invalid appearance fields safely fall back',normalizeCharacterVisuals({face:'invalid',build:'invalid'},'male').face==='oval');
+check('sample presets include distinct genders and backgrounds',new Set(CHARACTER_PRESETS.map(p=>p.gender)).size===2&&new Set(CHARACTER_PRESETS.map(p=>p.background)).size===3);
+check('armor and weapon art respond to equipped item while rejecting unknown art',resolveEquipmentAppearance('chainmail','bow').armor==='chainmail'&&resolveEquipmentAppearance('none','melee_spear').weapon==='melee_spear'&&resolveEquipmentAppearance('bad','bad').armor==='none');
+check('appearance gains a supported elder variant from simulation age',visualsForAge(DEFAULT_CHARACTER_VISUALS,64).ageStage==='elder');
+const inherited=inheritCharacterVisuals(DEFAULT_CHARACTER_VISUALS,{face:'long',hairstyle:'braided',facialHair:'full',skinTone:'deep',build:'broad'},'male',120);
+check('descendant visual traits remain mixed and differ from exact parent copy',JSON.stringify(inherited)!==JSON.stringify(DEFAULT_CHARACTER_VISUALS)&&JSON.stringify(inherited)!==JSON.stringify({face:'long',hairstyle:'braided',facialHair:'full',skinTone:'deep',build:'broad'}));
+const t={year:1300,month:3,day:1,season:seasonForMonth(3),totalDays:0};
+const family=new FamilySystem({seed:19,time:t,config:{birthChancePerYear:0,mortalityMultiplier:0,historicalDeathChance:0,disputeChance:0}});
+const father=family.getCurrentCharacter()!;father.visuals={...DEFAULT_CHARACTER_VISUALS,skinTone:'tan'};
+const mother=family.createSpouse(father.id,t,{age:22})!;mother.visuals={...DEFAULT_CHARACTER_VISUALS,face:'round',hairstyle:'braided',facialHair:'none'};
+const child=family.createChild(mother.id,father.id,t,{gender:'female'});
+check('child receives a distinct valid appearance',!!child?.visuals&&child.visuals.facialHair==='none');
+const saved=family.serialize();const restored=new FamilySystem({seed:19,time:t});restored.deserialize(saved);
+check('custom appearance survives family save and load',JSON.stringify(restored.getMember(child!.id)?.visuals)===JSON.stringify(child?.visuals));
+if(failed)throw new Error(`${failed} character customization checks failed`);
+console.log('Character customization checks passed.');

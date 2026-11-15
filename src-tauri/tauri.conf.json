@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Ottoman Legacy",
+  "version": "0.1.0",
+  "identifier": "com.ottomanlegacy.game",
+  "build": {
+    "beforeDevCommand": "npm run dev -- --host 127.0.0.1 --port 3000",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Ottoman: A Legacy Through Generations",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 720,
+        "minHeight": 540,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' asset: http://tauri.localhost; img-src 'self' asset: http://tauri.localhost data: blob:; style-src 'self' 'unsafe-inline' asset: http://tauri.localhost; script-src 'self' 'unsafe-eval' asset: http://tauri.localhost; connect-src 'self' asset: http://tauri.localhost http://localhost:3000 ws://localhost:3000;"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Game",
+    "shortDescription": "An Ottoman frontier life simulation"
+  }
+}

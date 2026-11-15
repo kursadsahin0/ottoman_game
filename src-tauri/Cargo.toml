@@ -1,0 +1,17 @@
+[package]
+name = "ottoman-legacy"
+version = "0.1.0"
+description = "Ottoman: A Legacy Through Generations"
+authors = ["Ottoman Legacy"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "ottoman_legacy_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }

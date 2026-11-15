@@ -1,0 +1,12 @@
+{
+  "appId": "com.ottomanlegacy.game",
+  "appName": "Ottoman Legacy",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
